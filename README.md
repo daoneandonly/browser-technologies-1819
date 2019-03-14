@@ -86,3 +86,15 @@ The app doesn't uses any form of cookies. So no problems here!
 #### Problems
 
 The app uses localStorage but isn't dependent on it. Whenever a page (except the main page) is loaded, the app checks localStorage. If there is any storage saved, it uses it. If not, it creates a new API request.
+
+## Tools
+
+I've used the following tools to test my web app.
+
+- [Colorblindly](https://chrome.google.com/webstore/detail/colorblindly/floniaahmccleoclneebhhmnjgdfijgg)
+- [Web Developer](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm)
+- [Chrome Vox](https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn)
+
+## Screenreader Test
+
+The screenreader (sometimes) mentions the element it is, or it is in. This becomes especially awkward when there are multiple sections nested into eachother. The single page is usable, the page overview could be better. This could be fixed with alt tags.
