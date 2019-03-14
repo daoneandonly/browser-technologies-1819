@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+* {
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+body {
+  font-family: 'Lato';
+  color: #383838;
+  background-color: rgba(56, 56, 56, 0.01);
+  margin-bottom: 5em;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  color: #383838;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 33vw;
+}
+
+.smallCard {
+  margin: auto;
+  max-width: 15%;
+  min-width: 15em;
+  width: 50%;
+}
+
+.smallCard:hover img {
+  transform-origin: center;
+  transition: 0.15s ease-in-out all;
+  transform: scale(1.025);
+}
+
+.card:nth-of-type(4n + 0),
+.card:nth-of-type(4n + 1) {
+  background-color: rgba(56, 56, 56, 0.05);
+}
+
+.singleAttack {
+  margin-top: 1em;
+  border-top: 0.1em solid rgba(56, 56, 56, 0.35);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.singleAttack > .attackDescription {
+  width: 100%;
+}
+
+.attackCost,
+.attackDamage {
+  width: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.attackDamage {
+  justify-content: flex-end;
+  transform: scaleX(1.05) translateX(-1em);
+}
+
+.attackCost {
+  justify-content: flex-start;
+}
+
+input[type='text'],
+input:focus {
+  font-family: arial;
+  font-size: 2em;
+  line-height: 1.6em;
+  border: none;
+  color: rgba(56, 56, 56, 0.65);
+  outline: none;
+  font-weight: 600;
+  padding: 0.2em;
+  transition: 0.15s linear all;
+  border-bottom: 0em solid rgba(56, 56, 56, 0.35);
+  width: auto;
+}
+
+input {
+  display: inline-block;
+  border-radius: 0.1em;
+  margin-bottom: 0.5em;
+}
+
+input:focus {
+  transition: 0.15s linear all;
+  border-bottom: 0.1em solid rgba(56, 56, 56, 0.35);
+}
+
+input::placeholder {
+  border: none;
+  color: rgba(56, 56, 56, 0.35);
+  outline: none;
+}
+
+main h2 {
+  width: 100%;
+}
+
+main .left {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.half {
+  width: 40%;
+}
+
+main .left img {
+  width: 95%;
+  height: 95%;
+  max-height: 80vh;
+  transform-origin: center;
+  transition: 0.15s ease-in-out all;
+}
+
+main .smallCard .previewImage {
+  transition: 0.05s ease-in-out all;
+}
+
+main .smallCard:hover .previewImage {
+  transform-origin: center;
+  transition: 0.15s ease-in-out all;
+  transform: scale(1.025);
+}
+
+main .right {
+  margin: 1em 0;
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardDetails,
+.detailsHp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cardDetails {
+  align-content: flex-start;
+}
+
+.cardDetails > *:last-child {
+  width: 100%;
+}
+
+.detailsHp > * {
+  margin-right: 0.2rem;
+}
+
+.left .previewImage {
+  width: 100%;
+}
+
+.detailsHp h3::before {
+  content: 'HP';
+  font-size: 0.5em;
+  margin-right: 0.5em;
+}
+
+.back {
+  width: 100%;
+}
+
+.back button {
+  font-family: 'Lato';
+  font-size: 1.2em;
+  width: 100%;
+  margin: auto;
+  border: none;
+  color: white;
+  background-color: rgba(56, 56, 56, 0.35);
+  line-height: 2em;
+  /* opacity: 0.5; */
+}
+
+.back button:hover {
+  background-color: rgba(56, 56, 56, 0.65);
+}
+
+/* SPRITES  */
+.energy {
+  background-image: url('https://pokemontcg.io/assets/images/energy-types-f0fdba3b2e216b418fbedace0c050f36.png');
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-right: 0.2em;
+}
+
+.fire {
+  background-position: 0 0;
+}
+
+.colorless {
+  background-position: -25px 0;
+}
+
+.lightning {
+  background-position: -25px -25px;
+}
+
+.fighting {
+  background-position: -50px -25px;
+}
+
+.fairy {
+  background-position: -50px 0;
+}
+
+.metal {
+  background-position: -75px 0;
+}
+
+.dragon {
+  background-position: 0 -25px;
+}
+
+.psychic {
+  background-position: -75px -25px;
+}
+
+.dragon {
+  background-position: 0 -25px;
+}
+
+.darkness {
+  background-position: 0 -50px;
+}
+
+.grass {
+  background-position: -25px -50px;
+}
+
+.water {
+  background-position: -75px -50px;
+}
+
+.water {
+  background-position: -75px -50px;
+}
+
+.damage {
+  color: rgba(56, 56, 56, 1);
+  font-weight: 800;
+  font-stretch: ultra-expanded;
+}
+
+.cardArtist {
+  color: rgba(56, 56, 56, 0.6);
+  font-stretch: extra-condensed;
+}
+
+.cardArtist > * {
+  display: inline-block;
+  font-size: 0.9rem;
+  align-self: flex-end;
+}
+.lds-dual-ring {
+  margin-top: 10em;
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+}
+.lds-dual-ring:after {
+  content: ' ';
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid rgba(56, 56, 56, 1);
+  border-color: rgba(56, 56, 56, 1) transparent rgba(56, 56, 56, 1) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 500px) {
+  .half {
+    width: 40%;
+  }
+
+  .card {
+    width: 70%;
+    min-height: 33vw;
+  }
+}
