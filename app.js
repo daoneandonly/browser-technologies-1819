@@ -48,7 +48,9 @@ app.get('/', (req, res) => {
     query = req.query
     res.redirect('/search/' + req.query.search + '/' + req.query.value)
   } else {
-    res.render('nojs', data)
+    if (data) {
+      res.render('index', data)
+    }
   }
 })
 

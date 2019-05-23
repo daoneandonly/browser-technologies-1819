@@ -9,7 +9,11 @@ import { utility } from './modules/utility.js'
 
   const dataObject = {
     localStorage: () => {
-      return window.localStorage
+      if (window.localStorage) {
+        return window.localStorage
+      } else {
+        return false
+      }
     },
     setStorage: data => {
       dataObject.localStorage().setItem('data', JSON.stringify(data))
@@ -105,7 +109,8 @@ import { utility } from './modules/utility.js'
         return `
         <section class="smallCard">
           <a href="#/cards/${data.id}">
-  					<img class='previewImage' src='${data.imageUrl}'/>
+  					<img class='previewImage' src='${data.imageUrl}'
+            alt='picture of ${data.id}'/>
   				</a>
         </section>
         `
