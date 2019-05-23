@@ -1,0 +1,33 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel='stylesheet', href='css/styles.css')
+    link(rel='stylesheet', href='css/pokeball_loader.css')
+    link(rel='icon', href='img/pokeball.jpg')
+    title Pokémon TCG Webapp: Sun & Moon 9
+  body
+    header
+      h1 Pokémon TCG Webapp (#{cards.length})
+      input.searchField(type='text')
+      input#radioName(type='radio', name='search', checked='checked', value='name')
+      label(for='radioName') Name
+      input#radioType(type='radio', name='search', value='type')
+      label(for='radioType') Type
+      input#radioRarity(type='radio', name='search', value='rarity')
+      label(for='radioRarity') Rarity
+      input#radioText(type='radio', name='search', value='text')
+      label(for='radioText') All card text
+    main
+      each i in cards
+        - let id = i.id
+        - let imageUrl = i.imageUrl
+        include includes/smallcard
+      
+      //.wrapper
+        .pokeball
+      // Pokeball loader found at https://codepen.io/vinztt/pen/XjEyvk
+    script(src='public/js/router.js')
+    script(type='module', src='js/app.js')

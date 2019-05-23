@@ -1,0 +1,27 @@
+{
+  "name": "browser-technologies-1819",
+  "version": "1.0.0",
+  "description": "> Using Progressive Enhancements in my Webapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daoneandonly/browser-technologies-1819.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daoneandonly/browser-technologies-1819/issues"
+  },
+  "homepage": "https://github.com/daoneandonly/browser-technologies-1819#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.17.0",
+    "nodemon": "^1.19.0",
+    "pug": "^2.0.3",
+    "sass": "^1.20.1"
+  }
+}
