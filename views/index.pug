@@ -12,7 +12,7 @@ html(lang='en')
     header
       form
         h1 Pokémon TCG Webapp
-        input.searchField(type='text', name='value')
+        input.searchField(type='text', name='value', autocomplete='off')
         input#radioName(type='radio', name='search', checked='checked', value='name')
         label(for='radioName') Name
         input#radioType(type='radio', name='search', value='type')
