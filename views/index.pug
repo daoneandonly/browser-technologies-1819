@@ -10,16 +10,17 @@ html(lang='en')
     title Pokémon TCG Webapp: Sun & Moon 9
   body
     header
-      h1 Pokémon TCG Webapp (#{cards.length + " cards"})
-      input.searchField(type='text')
-      input#radioName(type='radio', name='search', checked='checked', value='name')
-      label(for='radioName') Name
-      input#radioType(type='radio', name='search', value='type')
-      label(for='radioType') Type
-      input#radioRarity(type='radio', name='search', value='rarity')
-      label(for='radioRarity') Rarity
-      input#radioText(type='radio', name='search', value='text')
-      label(for='radioText') All card text
+      form
+        h1 Pokémon TCG Webapp (#{cards.length + " cards"})
+        input.searchField(type='text', name='value')
+        input#radioName(type='radio', name='search', checked='checked', value='name')
+        label(for='radioName') Name
+        input#radioType(type='radio', name='search', value='type')
+        label(for='radioType') Type
+        input#radioRarity(type='radio', name='search', value='rarity')
+        label(for='radioRarity') Rarity
+        input#radioText(type='radio', name='search', value='text')
+        label(for='radioText') All card text
     main
       each i in cards
         - let id = i.id

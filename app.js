@@ -4,12 +4,37 @@ const app = express()
 const path = require('path')
 const port = 3000
 const axios = require('axios')
+const fs = require('fs')
 
 data = {}
+query = {}
 
 app.set('view engine', 'pug')
 
 app.use(express.static(path.join(__dirname, 'public')))
+
+function filterData(data, key, filterWord) {
+  console.log(
+    'Filtering for the word "' + filterWord + '" in the category "' + key + '"'
+  )
+  if (filterWord == '') {
+    return data
+  }
+  let filterData = data.cards.filter(x => {
+    if (x[key] === undefined) {
+      return false
+    }
+    if (
+      x[key]
+        .toString()
+        .toLowerCase()
+        .includes(filterWord.toLowerCase())
+    ) {
+      return true
+    }
+  })
+  return { cards: filterData }
+}
 
 axios
   .get('https://api.pokemontcg.io/v1/cards?pageSize=250&setCode=sm7')
@@ -26,7 +51,18 @@ app.get('/', (req, res) => {
 })
 
 app.get('/nojs', (req, res) => {
-  res.render('nojs', data)
+  console.log(req.query)
+  if (req.query.value) {
+    query = req.query
+    res.redirect('/search/' + req.query.search + '/' + req.query.value)
+  } else {
+    res.render('nojs', data)
+  }
+})
+
+app.get('/search/:search/:value', (req, res) => {
+  console.log(req.params)
+  res.render('search', filterData(data, req.params.search, req.params.value))
 })
 
 function routeCards() {
