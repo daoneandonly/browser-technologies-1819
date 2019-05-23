@@ -44,7 +44,12 @@ axios
   })
 
 app.get('/', (req, res) => {
-  res.render('index', data)
+  if (req.query.value) {
+    query = req.query
+    res.redirect('/search/' + req.query.search + '/' + req.query.value)
+  } else {
+    res.render('nojs', data)
+  }
 })
 
 app.get('/nojs', (req, res) => {
