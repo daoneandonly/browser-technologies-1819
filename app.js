@@ -14,9 +14,6 @@ app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, 'public')))
 
 function filterData(data, key, filterWord) {
-  console.log(
-    'Filtering for the word "' + filterWord + '" in the category "' + key + '"'
-  )
   if (filterWord == '') {
     return data
   }
@@ -51,7 +48,6 @@ app.get('/', (req, res) => {
 })
 
 app.get('/nojs', (req, res) => {
-  console.log(req.query)
   if (req.query.value) {
     query = req.query
     res.redirect('/search/' + req.query.search + '/' + req.query.value)
@@ -61,7 +57,6 @@ app.get('/nojs', (req, res) => {
 })
 
 app.get('/search/:search/:value', (req, res) => {
-  console.log(req.params)
   res.render('search', filterData(data, req.params.search, req.params.value))
 })
 
@@ -74,6 +69,6 @@ function routeCards() {
   }
 }
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log('listing on port: ' + port)
 })
