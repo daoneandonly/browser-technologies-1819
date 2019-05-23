@@ -16,6 +16,11 @@ h1 {
   font-size: 3em;
 }
 
+header input[type='radio']:focus,
+header label:focus {
+  outline: 2px solid red;
+}
+
 main {
   width: 100%;
   display: flex;
@@ -44,6 +49,10 @@ main {
   transform-origin: center;
   transition: 0.15s ease-in-out all;
   transform: scale(1.025);
+}
+
+.smallCard a:focus {
+  outline: 0.25em solid red;
 }
 
 .card:nth-of-type(4n + 0),
