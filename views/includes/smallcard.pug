@@ -1,3 +1,7 @@
 section.smallCard
-  a(href='cards/' + id)
-    img.previewImage(src= imageUrl)
+  if js = true
+    a(href='/cards/' + id)
+      img.previewImage(src= imageUrl, alt= "image of card " + id)
+  else 
+    a(href='/cards/' + id)
+      img.previewImage(src= imageUrl, alt= "image of card " + id)

@@ -1,0 +1,21 @@
+section.singleAttack
+  section.attackCost
+    -  
+      function costToImage (cost) {
+        if (cost === undefined) {
+        return ''
+      }
+      let totalCost = cost.map(element => {
+        return `<i class='energy ${element.toLowerCase()}'></i>`
+      })
+      return totalCost.join('')
+      }
+    - costToImage(attack.cost)
+  section.attackName
+    h3= attack.name
+  section.attackDamage
+    if attack.damage
+      h3= attack.damage
+  section.attackDescription
+    if attack.text
+      p= attack.text

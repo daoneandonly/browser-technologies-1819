@@ -1,0 +1,23 @@
+section.card
+  a.back(href='/')
+    button ← Back to list
+  section.left.half
+    a(href= data.imageUrlHiRes, target='_blank')
+      img.largeImage(src= data.imageUrlHiRes)
+  section.right.half
+    section.cardDetails
+      h3 #{data.name}
+      section.detailsHp
+      if data.hp
+        h3= data.hp
+        // #{render.checkEmpty(render.costToImage(data.types), 'p')}
+      p= data.subtype
+    section.cardAttacks
+    if data.attacks
+      each attack in data.attacks 
+        include attack
+    if data.text
+      p= data.text
+    section.cardArtist
+      h3 Artist:
+      p #{data.artist}
