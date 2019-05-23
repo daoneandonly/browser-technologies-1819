@@ -4,6 +4,16 @@
 
 I recently made an app, in a very quick timeframe. Now I'm looking at it through lens of accessibility.
 
+## The core functionality
+
+The core functionality of this app is searching in a set (data object) of cards, based on different terms or types. This should work no matter what.
+
+## When is it pleasurable?
+
+The prime pleasurable layer is when the list of data updates on every keystroke. The list instantaneously results of the search.
+
+---
+
 So what happens when problems occur? I've looked at a list potential problems and how these could be fixed.
 
 ### No Images
