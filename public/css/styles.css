@@ -215,7 +215,7 @@ main .right {
 
 /* SPRITES  */
 .energy {
-  background-image: url('https://pokemontcg.io/assets/images/energy-types-f0fdba3b2e216b418fbedace0c050f36.png');
+  background-image: url('https://pokemontcg.io/static/media/energy-types.f0fdba3b.png');
   width: 25px;
   height: 25px;
   display: inline-block;
