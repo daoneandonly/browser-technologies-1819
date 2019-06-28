@@ -205,7 +205,7 @@ import { utility } from './modules/utility.js'
         ' (' +
         data.cards.length +
         ' cards)'
-      document.title = 'PokémonTCG Webapp: ' + titleMessage
+      document.title = 'Pokémon TCG Webapp: ' + titleMessage
       header.innerHTML = titleMessage
     },
     updateSearch: searchBy => {
